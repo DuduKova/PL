@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    //audioPlayer();
     getAll();
     initialize();
 });
@@ -49,13 +48,16 @@ function getSongs(id) {
 function getSongsToMedia(id , img) {
     $.get(`/api/playlist.php?type=songs&id=${id}`, function (data) {
         const songs = data.data.songs;
-        playPlaylist(songs ,img);
+        playPlaylist(id ,img , songs);
     });
 }
 
 function updatePlaylist(id) {
     const name = playlistName.val();
     const img = playlistImg.val();
+    if($('.bounce-in-bck').length > 0) {
+        updateMediaPlayer(img);
+    }
     $.post(`/api/playlist.php?type=playlist&id=${id}`,
         {
             name: name,
@@ -81,18 +83,3 @@ function deletePlaylist(id) {
         }
     });
 }
-
-//search playlist
-/*
-$('form').submit(function (event) {
-    event.preventDefault();
-    const id = $('#search').val();
-    $.ajax({
-        url: `/api/playlist.php?type=playlist&id=${id}`,
-        type: 'GET',
-        success: function (data) {
-            console.log(data);
-        }
-    });
-});
-*/

@@ -79,7 +79,7 @@ const addSongTemp = function (name, url) {
     `
 };
 
-const mediaPlayerTemp = function (songs , img) {
+const mediaPlayerTemp = function (id , img , songs) {
     return `
        <div id="mediaPlayer" class="row justify-content-center align-items-center shadow bounce-in-bck">
         <div class="col-sm-5 d-flex justify-content-center align-items-center">
@@ -106,11 +106,11 @@ const mediaPlayerTemp = function (songs , img) {
     </div>
     <div class="float-right ml-5" id="floatRightBtns">
         <div class="row mb-5">
-            <button class="btn btn-danger btn-sm rounded-circle"><i class="fa fa-times-circle"></i></button>
+            <button class="btn btn-danger btn-sm rounded-circle" onclick="confirmDelete(${id})"><i class="fa fa-times-circle"></i></button>
         </div>
 
         <div class="row">
-            <button class="btn btn-info btn-sm rounded-circle"><i class="fa fa-pencil-alt"></i></button>
+            <button class="btn btn-info btn-sm rounded-circle" data-target="#modal-1" data-toggle="modal" onclick="getOneForUpdate(${id})"><i class="fa fa-pencil-alt"></i></button>
         </div>
     </div>
     `

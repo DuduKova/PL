@@ -99,6 +99,11 @@ function executeThisOnNextClick(id) {
     btnNext.attr('onclick', `sendEvent('#modal-1', 2);`);
 }
 
+function updateMediaPlayer(img) {
+    alert('hello');
+    $('#playingDisc').attr('src', img);
+}
+
 function executeThisOnSaveClick() {
     btnSave.attr('onclick', 'createPlaylist()');
 }
@@ -187,8 +192,8 @@ function audioPlayer() {
     });
 }
 
-function playPlaylist(songs, img) {
-    $('#mediaContainer').html(mediaPlayerTemp(songs, img));
+function playPlaylist(id, img, songs) {
+    $('#mediaContainer').html(mediaPlayerTemp(id, img , songs));
     createMyMediaList(songs);
 }
 

@@ -4,7 +4,7 @@ body {
     background: black; }
     body .navbar .btn {
       background: white;
-      color: green; }
+      color: #41FF35; }
   body #mediaContainer:hover #floatRightBtns button {
     display: inline;
     position: absolute; }
@@ -60,6 +60,7 @@ img {
   .songNames .hide-play {
     opacity: 0; }
   .songNames:hover {
+    list-style: none;
     opacity: 1; }
     .songNames:hover .hide-play {
       opacity: 1; }

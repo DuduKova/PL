@@ -1,3 +1,5 @@
+
+
 @mixin rotated-text($num-letters: 100, $angle-span: 180deg, $angle-offset: 0deg) {
   $angle-per-char: $angle-span / $num-letters;
   @for $i from 1 through $num-letters {
@@ -16,7 +18,7 @@ body {
     background: black;
     .btn {
       background: white;
-      color: green;
+      color: #41FF35;
     }
   }
 
@@ -105,6 +107,7 @@ img {
     opacity: 0;
   }
   &:hover {
+    list-style: none;
     opacity: 1;
     .hide-play {
       opacity: 1;
