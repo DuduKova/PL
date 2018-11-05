@@ -1,20 +1,21 @@
 $(document).ready(function () {
+    window.playlistsJson = localStorage.getItem('playlists');
+    window.playlists = playlistsJson ? JSON.parse(playlistsJson) : [];
     getAll();
     initialize();
 });
 
+function setDataInLocalHost(data) {
+    window.playlists = data.data;
+    localStorage.setItem('playlists', JSON.stringify(window.playlists));
+}
+
 function getAll() {
     playlistContainer.html('');
     $.get('/api/playlist.php?type=playlist', function (data) {
-            for (let i = 0; i < data.data.length; i++) {
-                playlistContainer.append(playlistTemp.apply({
-                    id: data.data[i].id,
-                    name: data.data[i].name,
-                    image: data.data[i].image
-                }))
-            }
-        }
-    );
+        setDataInLocalHost(data);
+        drawPlaylists(data.data);
+    });
 }
 
 function createPlaylistRequest(name, img, songs) {
@@ -22,8 +23,9 @@ function createPlaylistRequest(name, img, songs) {
             name: name,
             image: img,
             songs: songs
-        },
-        getAll());
+        },function(response) {
+        getOne(response.data.id);
+    })
 }
 
 function getOneForUpdate(id) {
@@ -32,10 +34,9 @@ function getOneForUpdate(id) {
     });
 }
 
-
 function getOne(id) {
-    $.get(`/api/playlist.php?type=playlist&id=${id}` , function (data) {
-        return data.data;
+    $.get(`/api/playlist.php?type=playlist&id=${id}`, function (data) {
+        draw1(data.data)
     });
 }
 
@@ -45,23 +46,23 @@ function getSongs(id) {
     });
 }
 
-function getSongsToMedia(id , img) {
+function getSongsToMedia(id, img,PlId) {
     $.get(`/api/playlist.php?type=songs&id=${id}`, function (data) {
-        const songs = data.data.songs;
-        playPlaylist(id ,img , songs);
+        playPlaylist(id, img, data.data.songs,PlId);
     });
 }
 
-function updatePlaylist(id) {
+function updatePlaylist(id ,i) {
     const name = playlistName.val();
     const img = playlistImg.val();
-    if($('.bounce-in-bck').length > 0) {
-        updateMediaPlayer(img);
-    }
     $.post(`/api/playlist.php?type=playlist&id=${id}`,
         {
             name: name,
-            image: img
+            image: img,
+            success: function () {
+                    updateMediaPlayer(img);
+                    updatePlaylistName(name ,i);
+            }
         }
     )
 }
@@ -70,16 +71,29 @@ function updateSongs(id) {
     $.post(`/api/playlist.php?type=songs&id=${id}`, {
         songs: getValOfNewSongsToUpload()
     });
-    executeThisOnSaveClick();
-    getAll();
+    createMyMediaList(getValOfNewSongsToUpload());
 }
 
-function deletePlaylist(id) {
+function deletePlaylist(id,elementId) {
     $.ajax({
         method: 'DELETE',
         url: `/api/playlist.php?type=playlist&id=${id}`,
         success: function () {
-            getAll();
+            deleteElementById('md'+id);
+            deleteElementById(elementId);
         }
     });
 }
+
+/*
+function getHeaderContent(url) {
+    $.ajax({
+        type: "get",
+        url: {url},
+        success: function(response, status, xhr){
+            let ct = xhr.getResponseHeader('content-type') || "";
+            console.log(ct);
+        }
+    });
+}
+*/

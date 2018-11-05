@@ -3,23 +3,23 @@
 <head>
     <meta charset="utf-8"/>
     <title>My Awesome Player</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-md sticky-top mb-3">
+<section class="fixed-top">
+<header class="mb-5">
+    <nav class="navbar navbar-expand-md">
         <div class="col-sm-3">
             <div class="d-flex justify-content-center align-items-center">
-                <button class="btn btn-success rounded-circle float-left m-1" data-toggle="modal"
+                <button class="btn btn-primary rounded-circle float-left m-1" data-toggle="modal"
                         data-target="#modal-1" id="addNewPlaylist">+
                 </button>
-                <span style="color: white">Add new playlist</span>
+                <span class="try">Add new playlist</span>
             </div>
         </div>
         <form class="input-group ml-auto col-sm-3">
-            <input type="search" class="form-control" placeholder="Search playlist" id="search" onkeypress="searchLi()">
+            <input type="search" class="form-control" placeholder="Search playlist" id="search" data-list="playlists">
             <div class="input-group-append">
                 <span class="input-group-text"><i class="fa fa-search"></i></span>
             </div>
@@ -30,12 +30,11 @@
 <section id="mediaContainer" class="container d-flex justify-content-center align-items-center">
 
 </section>
+</section>
 
-<section>
-    <div class="container">
-        <div id="playlists" class="row">
+<section id="playlistsSection" class="container min-height position-relative margin-top">
+    <div id="playlists" class="row">
 
-        </div>
     </div>
 </section>
 
@@ -44,32 +43,48 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title step-1" id="modalTitle" data-step="1">Add new playlist</h3>
-                    <h3 class="modal-title step-2" id="modalTitleSongs" data-step="2">Add Playlist Songs</h3>
-                    <hr>
+                    <h3 class="modal-title step-1" id="modalTitle" data-step="1"></h3>
+                    <h3 class="modal-title step-2" id="modalTitleSongs" data-step="2"></h3>
                 </div>
                 <div class="modal-body step step-1">
-                    <div class="alert alert-danger d-none" role="alert" id="errorAlert">
+                    <div class="alert alert-danger d-none swing-in-top-fwd" role="alert" id="errorAlert">
                         <strong>Oh snap!</strong> Change a few things up and try submitting again.<br>
-                        <small>Requirements: PL name,PL img url,At least one song with mp3 & img url.</small>
+                        <small>Requirements: PL name,PL img url.</small>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
+                            <div>
                             <label for="playlistName">Playlist Name</label><br>
-                            <input class="input-group" type="text" id="playlistName"
-                                   placeholder="PL example" minlength="1" required><br>
-                            <label for="playlistImg">Playlist URL</label><br>
-                            <input class="input-group" type="text" id="playlistImg" placeholder="http://" minlength="1"
-                                   required onkeypress="priviewImg()" onchange="priviewImg()" oninput="priviewImg()">
+                            <input class="input-group form-control" type="text" id="playlistName"
+                                   placeholder="PL example" minlength="1" required onchange="validatePlaylistName(); validateFirstStep()">
+                            <div class="invalid-feedback">
+                                please enter name.
+                            </div>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div><br>
+                            </div>
+                            <div>
+                            <label for="playlistImg">Playlist URL</label>
+                           <br>
+                            <input class="input-group form-control" type="text" id="playlistImg" placeholder="http://"
+                                   minlength="1"
+                                   required onchange="validatePlaylistImg(); validateFirstStep()">
+                            <div class="invalid-feedback">
+                                The url you entered is not type of img.
+                            </div>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            </div>
                             <div class="row pt-5 mt-5">
                                 <div class="col-sm-6">
-                                    <button id="next" type="button" class="btn btn-outline-success step step-1"
-                                            data-step="1"
-                                            onclick="sendEvent('#modal-1', 2)">Next
+                                    <button id="next" type="button" class="btn btn-outline-primary step step-1"
+                                            data-step="1" disabled>
                                     </button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <button type="button" class="btn btn-outline-danger" onclick="resetFields()">Reset
+                                    <button type="button" class="btn btn-outline-info" onclick="resetFields()">Reset
                                         fields
                                     </button>
                                 </div>
@@ -77,31 +92,23 @@
 
                         </div>
                         <div class="col-sm-6">
-                            <img id="imgPreview" class="rounded-circle" src="img/student.png">
+                            <img id="imgPreview" class="rounded-circle" src="img/default.png">
                         </div>
                     </div>
                 </div>
                 <div class="modal-body step step-2">
                     <div id="addSongsForm">
-                        <div class="row m-2">
-                            <div class="col-sm-6">
-                                <input class="input-group songUrl" type="text" placeholder="Song URL" required>
-                            </div>
-                            <div class="col-sm-4">
-                                <input class="input-group songName" type="text" placeholder="Name" required>
-                            </div>
-                        </div>
+
                     </div>
 
                     <div class="row pt-5 mt-5">
                         <div class="col-sm-8">
-                            <button type="button" class="btn btn-outline-success" onclick="addMoreSong()">Add another
+                            <button type="button" class="btn btn-outline-primary" onclick="addMoreSong()">Add another
                                 song
                             </button>
                         </div>
                         <div class="col-sm-4">
-                            <button id="save" class="btn btn-outline-danger" data-dismiss="modal"
-                                    onclick="createPlaylist()">SAVE & FINISH
+                            <button id="save" class="btn btn-outline-info" data-dismiss="modal" disabled>SAVE & FINISH
                             </button>
                         </div>
                     </div>
@@ -131,7 +138,7 @@
     </div>
 </section>
 
-<footer class="page-footer font-small cyan darken-3">
+<footer class="page-footer font-small darken-3 position-relative">
     <div class="footer-copyright text-center py-3">© 2018 Copyright:
         <a href="#"> David Kovalski</a>
     </div>
@@ -139,9 +146,13 @@
 
 <script src="js/jquery.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="node_modules/circletype/dist/circletype.min.js"></script>
+<script src="js/c-text.js"></script>
 <script src="js/templates.js"></script>
+<script src="js/media-player.js"></script>
+<script src="js/modal.js"></script>
 <script src="js/ajax.js"></script>
 <script src="js/app.js"></script>
-
+<script src="js/validation.js"></script>
 </body>
 </html>

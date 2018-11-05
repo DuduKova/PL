@@ -1,28 +1,28 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
 
-
-@mixin rotated-text($num-letters: 100, $angle-span: 180deg, $angle-offset: 0deg) {
-  $angle-per-char: $angle-span / $num-letters;
-  @for $i from 1 through $num-letters {
-    .char#{$i} {
-      @include transform(rotate($angle-offset + $angle-per-char * $i))
-    }
-  }
-}
-
-
-
+$basic-opacity: 0.85;
+$full-opacity: 1;
+$zero-opacity: 0;
+$myBG: linear-gradient(90deg, rgba(40, 140, 240, 0.82), rgba(0, 220, 240, 0.53));
 
 body {
-  background: linear-gradient(75deg, rgba(40, 140, 240, 0.82), rgba(0, 220, 240, 0.53));
+  background: $myBG;
+  .min-height {
+    min-height: 300px;
+  }
   .navbar {
-    background: black;
+    background: $black;
+    color: $blue;
     .btn {
-      background: white;
-      color: #41FF35;
+      color: $primary;
+      background: $white;
+      font-size: large;
     }
   }
 
   #mediaContainer {
+    width: 700px;
+    min-width: 700px;
     &:hover #floatRightBtns {
       button {
         display: inline;
@@ -31,31 +31,76 @@ body {
     }
   }
 
-  #mediaPlayer {
-    padding: 10px 40px;
-    background: black;
+  .margin-top {
+    margin-top: 100px;
+  }
+
+  .moveDown {
+    margin-top: 450px;
+  }
+
+  .mediaPlayer {
     min-width: 600px;
+    padding: 10px 40px;
+    background: $black;
+    width: 600px;
     border-radius: 125px;
     height: 300px;
-    color: #F1F3F4;
+    color: $primary;
+  }
+
+  #myList {
+    height: 120px;
+    overflow: scroll;
   }
 
   .current-song {
     font-size: large;
-    color: #71dd8a;
+    color: $primary;
+    opacity: $full-opacity;
+    list-style: none;
+    a {
+      color: $primary;
+    }
+    .hide-play {
+      opacity: $full-opacity;
+    }
+    &:hover {
+      .hide-pause {
+        opacity: $full-opacity;
+      }
+      .hide-play {
+        opacity: $zero-opacity;
+      }
+    }
+  }
+
+  .current-song-pause {
+    &:hover {
+      .hide-pause {
+        opacity: $zero-opacity;
+      }
+      .hide-play {
+        opacity: $full-opacity;
+      }
+    }
   }
 
   .container {
     #playlists {
       .playlist {
-        opacity: 0.85;
+        display: flex;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+        opacity: $basic-opacity;
         button {
-          opacity: 0;
+          opacity: $zero-opacity;
         }
         &:hover {
-          opacity: 1;
+          opacity: $full-opacity;
           button {
-            opacity: 1;
+            opacity: $full-opacity;
           }
         }
 
@@ -63,11 +108,11 @@ body {
     }
   }
   .be-at-the-top {
-    top: 40px;
+    top: 20%;
   }
   .playlist {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
   }
   .center-dot {
     height: 25px;
@@ -91,34 +136,83 @@ img {
   height: 200px;
 }
 
-.playlistName span {
-  font: 26px Monaco, MonoSpace;
-  height: 200px;
+.playlistName {
+  span {
+    height: 200px;
+    position: absolute;
+    width: 20px;
+    left: 0;
+    top: 0;
+    transform-origin: bottom center;
+  }
+}
+
+.curveMe {
+  word-spacing: 5px;
+  letter-spacing: -1px;
   position: absolute;
-  width: 20px;
-  left: 0;
-  top: 0;
-  transform-origin: bottom center;
+  top: 20px;
 }
 
 .songNames {
-  opacity: 0.85;
+  opacity: $basic-opacity;
+  color: white;
+  a{
+    text-decoration: none;
+    color: white;
+  }
   .hide-play {
-    opacity: 0;
+    opacity: $zero-opacity;
+  }
+  .hide-pause {
+    opacity: $zero-opacity;
   }
   &:hover {
     list-style: none;
-    opacity: 1;
+    opacity: $full-opacity;
     .hide-play {
-      opacity: 1;
+      opacity: $full-opacity;
     }
   }
 }
 
+.modal-content {
+  color: $white;
+  background: $black;
+  border: 2px solid $white;
+}
+.modal-header {
+  border-color: $white;
+}
 
-/*
- =========================   My keyframes
- */
+#addSongsForm {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $white;
+}
+
+::-webkit-scrollbar-corner {
+  background: $black;
+}
+
+.input-group-text {
+  background:  transparent;
+  color: $white;
+}
+
+ //=========================   My keyframes
+
 
 .rotate-center {
   -webkit-animation: rotate-center 33s linear infinite both;
@@ -353,4 +447,96 @@ img {
   }
 }
 
+
+.shake-vertical {
+  -webkit-animation: shake-vertical 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation: shake-vertical 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes shake-vertical {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  80% {
+    -webkit-transform: translateY(6.4px);
+    transform: translateY(6.4px);
+  }
+  90% {
+    -webkit-transform: translateY(-6.4px);
+    transform: translateY(-6.4px);
+  }
+}
+@keyframes shake-vertical {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  80% {
+    -webkit-transform: translateY(6.4px);
+    transform: translateY(6.4px);
+  }
+  90% {
+    -webkit-transform: translateY(-6.4px);
+    transform: translateY(-6.4px);
+  }
+}
+
+.scale-out-center {
+  -webkit-animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+@keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+}
 
