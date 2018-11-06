@@ -36,53 +36,54 @@ function is_url(str) {
 
 // validation step 2
 
-let songsUrlAreOkToSave = false;
-let songsNameAreOkToSave = false;
-/*
-function checkIfMp3(id) {
+function validateOneMp3Url(id) {
     let check = $(`#${id}`);
     if (check.val().slice(-4) === '.mp3') {
         validationGoodFeedback(check);
     } else {
         validationBadFeedback(check);
-        btnSave.attr('disabled', 'disabled');
     }
 }
-*/
 
-function checkIfMp3() {
-    songsUrlAreOkToSave = true;
+function validateOneSongName(id) {
+    let check = $(`#${id}`);
+    if (check.val() !== '') {
+        validationGoodFeedback(check);
+    } else {
+        validationBadFeedback(check);
+    }
+}
+
+
+function checkAllMp3Inputs() {
+    let isvalid = true;
     $('#addSongsForm .songUrl').each(function () {
         if ($(this).val().slice(-4) === '.mp3') {
             validationGoodFeedback($(this));
         } else {
             validationBadFeedback($(this));
-            btnSave.attr('disabled', 'disabled');
-            songsUrlAreOkToSave = false;
-            return false;
+            isvalid = false;
         }
     });
-   okToSave();
+    return isvalid;
 }
 
-function checkSongNameVal() {
-    songsNameAreOkToSave = true;
+function checkAllSongNameInputs() {
+    let isvalid = true;
     $('#addSongsForm .songName').each(function () {
         if ($(this).val() !== '') {
             validationGoodFeedback($(this));
         } else {
             validationBadFeedback($(this));
-            btnSave.attr('disabled', 'disabled');
-            songsNameAreOkToSave = false;
-            return false;
+            isvalid = false;
         }
     });
-    okToSave();
+    return isvalid;
 }
 
-function okToSave() {
-    if (songsNameAreOkToSave === true && songsUrlAreOkToSave === true) {
-        btnSave.removeAttr('disabled');
+function validateSecondStep() {
+    if (checkAllSongNameInputs() === true && checkAllMp3Inputs() === true) {
+        modal.modal('hide');
     }
 }
 
@@ -117,7 +118,7 @@ function validationBadFeedback(id) {
     id.addClass('shake-vertical');
 }
 
-function validationBResetFeedback(id) {
+function validationResetFeedback(id) {
     id.removeClass('is-valid');
     id.removeClass('is-invalid');
     id.removeClass('shake-vertical');

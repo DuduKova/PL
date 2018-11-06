@@ -10,20 +10,19 @@ function drawPlaylists(data) {
 }
 
 function draw1(data) {
-        playlistContainer.append(playlistTemp.apply({
-            id: data.id,
-            name: data.name,
-            image: data.image
-        }));
+    playlistContainer.append(playlistTemp.apply({
+        id: data.id,
+        name: data.name,
+        image: data.image
+    }));
     curveText($('.curveMe').length - 1);
 }
 
 function deleteElementById(id) {
-    $(`#${id}`).addClass('scale-out-center').animate({height: 0}, 1000,"linear",function()
-        {
+    $(`#${id}`).addClass('roll-out-right').animate({height: 0}, 1000, "linear", function () {
             $(this).remove();
             let $mediaPlayer = $('.mediaPlayer');
-            if($mediaPlayer.length === 0) {
+            if ($mediaPlayer.length === 0) {
                 movePlaylistsContainerBack();
             }
         }
@@ -50,15 +49,17 @@ function editSongsModal(data) {
     let j = 0;
     addSongsFrom.html("");
     songs.forEach(function () {
-        addSongsFrom.append(addSongTemp(songs[j].name, songs[j].url));
+        addSongsFrom.append(addSongTemp(songs[j].name, songs[j].url , j));
         j++
     });
+    checkAllSongNameInputs();
+    checkAllMp3Inputs();
 }
 
 $("#search").keyup(function () {
     if (this.value.length === 0) {
         getAll();
-    } else if(this.value.length === 1) {
+    } else if (this.value.length === 1) {
 
     }
     else {
@@ -79,15 +80,31 @@ function curveText(i) {
         .radius(140);
 }
 
-function updateStepOne(id,i) {
+function updateStepOne(id, i) {
     sendEvent('#modal-1', 2);
-    updatePlaylist(id , i);
+    updatePlaylist(id, i);
     getSongs(id);
 }
 
-function updatePlaylistName(name , i) {
-    $('.curveMe')[i].innerHTML = name;
+function showUpdatedPlaylist(name , img ,i) {
+        updateMediaPlayer(img);
+        updatePlaylistName(name, i);
+        updatePlaylistImg(img , i);
+}
+
+function updatePlaylistName(name, i) {
+    const $curveMe = $('.curveMe');
+    $curveMe[i].innerHTML = name;
     curveText(i);
+    $curveMe[i].classList.add('text-focus-in');
+    setTimeout(function(){ $curveMe[i].classList.remove('text-focus-in'); }, 1000);
+}
+
+function updatePlaylistImg(img, i) {
+    let $playListImage = $('.playListImage');
+    $playListImage[i].src = img;
+    $playListImage[i].classList.add('shake-vertical');
+    setTimeout(function(){ $playListImage[i].classList.remove('shake-vertical'); }, 1000);
 }
 
 function movePlaylistsContainer() {

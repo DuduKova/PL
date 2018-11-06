@@ -7,7 +7,7 @@ modal.on('show.bs.modal', function (event) {
         modalHeaderSongs.html('Edit Playlist Songs');
         btnNext.html('Edit & Next');
         btnNext.attr('onclick', `updateStepOne(${event.relatedTarget.id} ,${event.relatedTarget.value})`);
-        btnSave.attr('onclick', `updateSongs(${event.relatedTarget.id})`);
+        btnSave.attr('onclick', `updateSongs(${event.relatedTarget.id} ,${event.relatedTarget.value}); validateSecondStep()`);
     } else {
         btnNext.attr('disabled', 'disabled');
         btnNext.html('Next');
@@ -17,15 +17,14 @@ modal.on('show.bs.modal', function (event) {
         modalHeader.html('Add new playlist');
         modalHeaderSongs.html('Add Playlist Songs');
         addSongsFrom.html(addSongTemp());
-        btnSave.attr('onclick', 'createPlaylist()');
+        btnSave.attr('onclick', 'validateSecondStep(); createPlaylist()');
         btnNext.attr('onclick', `sendEvent('#modal-1', 2);`);
     }
 });
 
 modal.on('hidden.bs.modal', function () {
-    validationBResetFeedback(playlistName);
-    validationBResetFeedback(playlistImg);
-    btnSave.attr('disabled', 'disabled');
+    validationResetFeedback(playlistName);
+    validationResetFeedback(playlistImg);
     errorAlert.addClass('d-none');
     modal.find('.step').hide();
     modal.find('[data-step]').hide();
@@ -83,16 +82,14 @@ function initialize() {
 function resetFields() {
     playlistName.val('');
     playlistImg.val('');
-    validationBResetFeedback(playlistName);
-    validationBResetFeedback(playlistImg);
+    validationResetFeedback(playlistName);
+    validationResetFeedback(playlistImg);
     btnNext.attr('disabled', 'disabled');
 }
 
 function addMoreSong() {
-    $('#save').attr('disabled', 'disabled');
+    //$('#save').attr('disabled', 'disabled');
     addSongsFrom.append(addSongTemp());
-    songsUrlAreOkToSave = false;
-    songsNameAreOkToSave = false;
 }
 
 // ============= update mode functions ========

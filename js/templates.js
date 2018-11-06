@@ -26,8 +26,8 @@ const playlistTemp = function () {
     const now = new Date();
     const uniqeId = now.getMilliseconds() + this.id;
     const index = $('.curveMe').length;
-    return `
-      <div class="col-lg-3 col-md-4 col-sm-6 playlist puff-in-center" id="${uniqeId}">
+
+    return `<div class="col-lg-3 col-md-4 col-sm-6 playlist roll-in-left" id="${uniqeId}">
             <option value="${this.name}" id="check + ${this.name}"></option>
             <div class="curveMe">${this.name}</div>
             <div class="d-flex justify-content-center align-items-center">
@@ -36,25 +36,27 @@ const playlistTemp = function () {
                     <button class="btn btn-info btn-sm rounded-circle" data-target="#modal-1" data-toggle="modal" value="${index}" id="${this.id}"><i class="fa fa-pencil-alt"></i></button>
                 </div>
                 <div class="rounded-circle position-absolute center-dot"></div>
-                <img src=${this.image} class="rounded-circle shadow-lg">
-                <button class="btn btn-primary rounded-circle position-absolute" onclick="getSongsToMedia(${this.id},'${this.image}',${uniqeId})"><i
+                <img src=${this.image} class="rounded-circle shadow-lg playListImage">
+                <button class="btn btn-primary rounded-circle position-absolute" onclick="getSongsToMedia(${this.id},'${this.image}',${uniqeId},${index})"><i
                         class="fa fa-play"></i></button>
             </div>
         </div>
-    </div>
-`
+    </div>`
 };
 
-const addSongTemp = function (name, url) {
-    if (name === undefined && url === undefined) {
+const addSongTemp = function (name, url, i) {
+    if (name === undefined && url === undefined && i === undefined) {
         name = "";
         url = "";
+        i = "";
     }
+    const now = new Date();
+    const uniqeId = now.getMilliseconds() + i;
+    const uniqeId2 = now.getTime() + now.getSeconds() + i;
 
-    return `
- <div class="row m-2">
+    return `<div class="row m-2">
     <div class="col-sm-6">
-        <input  class="input-group songUrl form-control" type="text" placeholder="Song URL" value="${url}" onchange="checkIfMp3()" minlength="1" required>
+        <input id="${uniqeId}"  class="input-group songUrl form-control" type="text" placeholder="Song URL" value="${url}" onchange="validateOneMp3Url('${uniqeId}')" minlength="1" required>
         <div class="invalid-feedback">
         The url you entered is not type of mp3.
         </div>
@@ -63,7 +65,7 @@ const addSongTemp = function (name, url) {
       </div>
          </div>
           <div class="col-sm-4">
-            <input class="input-group songName form-control" type="text" placeholder="Name" value="${name}" minlength="1" onchange="checkSongNameVal()" required>
+            <input id="${uniqeId2}" class="input-group songName form-control" type="text" placeholder="Name" value="${name}" minlength="1" onchange="validateOneSongName('${uniqeId2}')" required>
              <div class="invalid-feedback">
         Enter Name please.
         </div>
@@ -72,15 +74,13 @@ const addSongTemp = function (name, url) {
       </div>
            </div>
            <div class="col-sm-2">
-              <button class="rounded-circle btn btn-outline-danger btn-sm mt-1" type="button" onclick="$(this).closest('.m-2').remove(); okToSave()"><i class="fa fa-times"></i></button>
+              <button class="rounded-circle btn btn-outline-danger btn-sm mt-1" type="button" onclick="$(this).closest('.m-2').remove(); validateSecondStep()"><i class="fa fa-times"></i></button>
           </div>
-    </div>
-    `
+    </div>`
 };
 
-const mediaPlayerTemp = function (id, img, songs,PlId) {
-    return `
-       <div id="${'md'+id}" class="mediaPlayer row justify-content-center align-items-center shadow bounce-in-bck">
+const mediaPlayerTemp = function (id, img, songs, PlId, i) {
+    return `<div id="${'md' + id}" class="mediaPlayer row justify-content-center align-items-center shadow bounce-in-bck">
         <div class="col-sm-5 d-flex justify-content-center align-items-center">
             <img src="${img}" class="rounded-circle rotate-center" id="playingDisc">
             <button class="btn btn-primary btn-sm rounded-circle position-absolute d-none" onclick="playMusic()" id="btnPlayMusic">
@@ -109,14 +109,11 @@ const mediaPlayerTemp = function (id, img, songs,PlId) {
         </div>
 
         <div class="row">
-            <button class="btn btn-info btn-sm rounded-circle" data-target="#modal-1" data-toggle="modal" id="${id}"><i class="fa fa-pencil-alt"></i></button>
+            <button class="btn btn-info btn-sm rounded-circle" data-target="#modal-1" data-toggle="modal" value="${i}" id="${id}" onclick="pauseMusic()"><i class="fa fa-pencil-alt"></i></button>
         </div>
-    </div>
-    `
+    </div>`
 };
 
 const listSongItem = function (name, url) {
-    return `
-    <li class="songNames"><i class="fa fa-play fa-xs hide-play" href="${url}"></i>${name}</li>
-    `
+    return `<li class="songNames"><i class="fa fa-play fa-xs hide-play" href="${url}"></i>${name}</li>`
 };

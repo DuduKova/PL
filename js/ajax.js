@@ -20,10 +20,10 @@ function getAll() {
 
 function createPlaylistRequest(name, img, songs) {
     $.post('/api/playlist.php?type=playlist', {
-            name: name,
-            image: img,
-            songs: songs
-        },function(response) {
+        name: name,
+        image: img,
+        songs: songs
+    }, function (response) {
         getOne(response.data.id);
     })
 }
@@ -46,40 +46,41 @@ function getSongs(id) {
     });
 }
 
-function getSongsToMedia(id, img,PlId) {
+function getSongsToMedia(id, img, PlId , i) {
     $.get(`/api/playlist.php?type=songs&id=${id}`, function (data) {
-        playPlaylist(id, img, data.data.songs,PlId);
+        playPlaylist(id, img, data.data.songs, PlId , i);
     });
 }
 
-function updatePlaylist(id ,i) {
+function updatePlaylist(id, i) {
     const name = playlistName.val();
     const img = playlistImg.val();
     $.post(`/api/playlist.php?type=playlist&id=${id}`,
         {
             name: name,
-            image: img,
-            success: function () {
-                    updateMediaPlayer(img);
-                    updatePlaylistName(name ,i);
-            }
+            image: img
         }
     )
 }
 
-function updateSongs(id) {
+function updateSongs(id , i) {
     $.post(`/api/playlist.php?type=songs&id=${id}`, {
         songs: getValOfNewSongsToUpload()
     });
-    createMyMediaList(getValOfNewSongsToUpload());
+    const name = playlistName.val();
+    const img = playlistImg.val();
+    showUpdatedPlaylist(name , img ,i);
+    if ($('.bounce-in-bck').length > 0) {
+        createMyMediaList(getValOfNewSongsToUpload());
+    }
 }
 
-function deletePlaylist(id,elementId) {
+function deletePlaylist(id, elementId) {
     $.ajax({
         method: 'DELETE',
         url: `/api/playlist.php?type=playlist&id=${id}`,
         success: function () {
-            deleteElementById('md'+id);
+            deleteElementById('md' + id);
             deleteElementById(elementId);
         }
     });

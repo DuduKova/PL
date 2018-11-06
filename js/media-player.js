@@ -14,8 +14,9 @@ function audioPlayer() {
 
     audioPlayer.addEventListener("ended", function () {
         currentSong++;
-        if (currentSong === playlistItem.length)
+        if (currentSong === playlistItem.length) {
             currentSong = 0;
+        }
         playlistItem.removeClass("current-song");
         audioPlayer.src = playlistItem[currentSong].href;
         audioPlayer.play();
@@ -47,8 +48,8 @@ function audioPlayer() {
     });
 }
 
-function playPlaylist(id, img, songs ,PlId) {
-    mediaPlayerDiv.html(mediaPlayerTemp(id, img, songs,PlId));
+function playPlaylist(id, img, songs ,PlId , i) {
+    mediaPlayerDiv.html(mediaPlayerTemp(id, img, songs,PlId , i));
     createMyMediaList(songs);
 }
 
@@ -60,9 +61,7 @@ function createMyMediaList(songs) {
         myList.append(listSongItem(songs[j].name, songs[j].url));
         j++
     });
-    if ($('.bounce-in-bck').length > 0) {
         audioPlayer();
-    }
 }
 
 function pauseMusic() {
@@ -72,7 +71,3 @@ function pauseMusic() {
 function playMusic() {
     $('#audioPlayer')[0].play();
 }
-
-//$( '.songNames' ).mouseenter( handlerIn ).mouseleave( handlerOut );
-
-//$( '.current-song' ).mouseenter( handlerIn ).mouseleave( handlerOut );
