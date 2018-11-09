@@ -46,33 +46,28 @@ function getSongs(id) {
     });
 }
 
-function getSongsToMedia(id, img, PlId , i) {
+function getSongsToMedia(id, img, discElementId, i) {
     $.get(`/api/playlist.php?type=songs&id=${id}`, function (data) {
-        playPlaylist(id, img, data.data.songs, PlId , i);
+        playPlaylist(id, img, data.data.songs, discElementId, i);
     });
 }
 
-function updatePlaylist(id, i) {
-    const name = playlistName.val();
-    const img = playlistImg.val();
+function updatePlaylist(id) {
     $.post(`/api/playlist.php?type=playlist&id=${id}`,
         {
-            name: name,
-            image: img
+            name: playlistName.val(),
+            image: playlistImg.val()
         }
     )
 }
 
-function updateSongs(id , i) {
+function updateSongs(id, i) {
     $.post(`/api/playlist.php?type=songs&id=${id}`, {
-        songs: getValOfNewSongsToUpload()
+        songs: getValOfNewSongsToUpload(),
+        success: function () {
+            showUpdatedPlaylist(playlistName.val(), playlistImg.val(), i);
+        }
     });
-    const name = playlistName.val();
-    const img = playlistImg.val();
-    showUpdatedPlaylist(name , img ,i);
-    if ($('.bounce-in-bck').length > 0) {
-        createMyMediaList(getValOfNewSongsToUpload());
-    }
 }
 
 function deletePlaylist(id, elementId) {

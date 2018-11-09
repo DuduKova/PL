@@ -8,7 +8,7 @@
 </head>
 <body>
 <section class="fixed-top">
-<header class="mb-5">
+<header class="mb-4">
     <nav class="navbar navbar-expand-md">
         <div class="col-sm-3">
             <div class="d-flex justify-content-center align-items-center">
@@ -39,7 +39,7 @@
 </section>
 
 <section>
-    <div class="modal fade multi-step" id="modal-1">
+    <div class="modal fade multi-step scale-in-center" id="modal-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -57,12 +57,12 @@
                             <label for="playlistName">Playlist Name</label><br>
                             <input class="input-group form-control" type="text" id="playlistName"
                                    placeholder="PL example" minlength="1" required onchange="validatePlaylistName(); validateFirstStep()">
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback scale-in-center">
                                 please enter name.
                             </div>
-                            <div class="valid-feedback">
+                            <div class="valid-feedback scale-in-center">
                                 Looks good!
-                            </div><br>
+                            </div>
                             </div>
                             <div>
                             <label for="playlistImg">Playlist URL</label>
@@ -70,10 +70,10 @@
                             <input class="input-group form-control" type="text" id="playlistImg" placeholder="http://"
                                    minlength="1"
                                    required onchange="validatePlaylistImg(); validateFirstStep()">
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback scale-in-center">
                                 The url you entered is not type of img.
                             </div>
-                            <div class="valid-feedback">
+                            <div class="valid-feedback scale-in-center">
                                 Looks good!
                             </div>
                             </div>

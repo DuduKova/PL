@@ -6785,11 +6785,11 @@ body {
   body .min-height {
     min-height: 300px; }
   body .navbar {
-    background: #000;
-    color: #007bff; }
+    background: black;
+    color: #0B7FDD; }
     body .navbar .btn {
-      color: #007bff;
-      background: #fff;
+      color: #0B7FDD;
+      background: white;
       font-size: large; }
   body #mediaContainer {
     width: 700px;
@@ -6798,17 +6798,17 @@ body {
       display: inline;
       position: absolute; }
   body .margin-top {
-    margin-top: 100px; }
+    margin-top: 60px; }
   body .moveDown {
-    margin-top: 450px; }
+    margin-top: 400px; }
   body .mediaPlayer {
     min-width: 600px;
     padding: 10px 40px;
-    background: #000;
+    background: black;
     width: 600px;
     border-radius: 125px;
     height: 300px;
-    color: #007bff; }
+    color: #0B7FDD; }
   body #myList {
     height: 120px;
     overflow: scroll; }
@@ -6826,7 +6826,7 @@ body {
         display: inline-block; }
   body .current-song {
     font-size: large;
-    color: #007bff;
+    color: #0B7FDD;
     opacity: 1;
     list-style: none; }
     body .current-song .hide-play {
@@ -6886,12 +6886,12 @@ img {
   top: 20px; }
 
 .modal-content {
-  color: #fff;
-  background: #000;
-  border: 2px solid #fff; }
+  color: white;
+  background: black;
+  border: 2px solid white; }
 
 .modal-header {
-  border-color: #fff; }
+  border-color: white; }
 
 #addSongsForm {
   max-height: 400px;
@@ -6901,17 +6901,17 @@ img {
   width: 6px; }
 
 ::-webkit-scrollbar-track {
-  background: #000; }
+  background: black; }
 
 ::-webkit-scrollbar-thumb {
-  background: #fff; }
+  background: white; }
 
 ::-webkit-scrollbar-corner {
-  background: #000; }
+  background: black; }
 
 .input-group-text {
   background: transparent;
-  color: #fff; }
+  color: white; }
 
 .rotate-center {
   -webkit-animation: rotate-center 33s linear infinite both;
@@ -6931,36 +6931,6 @@ img {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
-.puff-in-center {
-  -webkit-animation: puff-in-center 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-  animation: puff-in-center 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) both; }
-
-@-webkit-keyframes puff-in-center {
-  0% {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    -webkit-filter: blur(2px);
-    filter: blur(2px);
-    opacity: 0; }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
-    opacity: 1; } }
-@keyframes puff-in-center {
-  0% {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    -webkit-filter: blur(2px);
-    filter: blur(2px);
-    opacity: 0; }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
-    opacity: 1; } }
 .slide-in-bck-bottom {
   -webkit-animation: slide-in-bck-bottom 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-in-bck-bottom 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
@@ -7073,55 +7043,62 @@ img {
     transform: scale(1);
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out; } }
-.shake-vertical {
-  -webkit-animation: shake-vertical 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
-  animation: shake-vertical 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
-  z-index: 1; }
+.shake-bottom {
+  -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both; }
 
-@-webkit-keyframes shake-vertical {
+@-webkit-keyframes shake-bottom {
   0%,
   100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0); }
-  10%,
-  30%,
-  50%,
-  70% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px); }
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%; }
+  10% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg); }
   20%,
   40%,
   60% {
-    -webkit-transform: translateY(8px);
-    transform: translateY(8px); }
-  80% {
-    -webkit-transform: translateY(6.4px);
-    transform: translateY(6.4px); }
-  90% {
-    -webkit-transform: translateY(-6.4px);
-    transform: translateY(-6.4px); } }
-@keyframes shake-vertical {
-  0%,
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0); }
-  10%,
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg); }
   30%,
   50%,
   70% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px); }
+    -webkit-transform: rotate(4deg);
+    transform: rotate(4deg); }
+  80% {
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg); }
+  90% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg); } }
+@keyframes shake-bottom {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%; }
+  10% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg); }
   20%,
   40%,
   60% {
-    -webkit-transform: translateY(8px);
-    transform: translateY(8px); }
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg); }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(4deg); }
   80% {
-    -webkit-transform: translateY(6.4px);
-    transform: translateY(6.4px); }
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg); }
   90% {
-    -webkit-transform: translateY(-6.4px);
-    transform: translateY(-6.4px); } }
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg); } }
 .scale-out-center {
   -webkit-animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both; }
@@ -7145,8 +7122,8 @@ img {
     transform: scale(0);
     opacity: 1; } }
 .scale-in-center {
-  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: scale-in-center 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+  -webkit-animation: scale-in-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
 
 @-webkit-keyframes scale-in-center {
   0% {

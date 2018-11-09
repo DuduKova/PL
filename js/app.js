@@ -32,12 +32,12 @@ function deleteElementById(id) {
 function getValOfNewSongsToUpload() {
     const songs = [];
     let song = {};
-    const songName = $('.songName');
-    const songURL = $('.songUrl');
+    const $songName = $('.songName');
+    const $songURL = $('.songUrl');
 
-    songName.each(function (i) {
-        song.name = songName.eq(i).val();
-        song.url = songURL.eq(i).val();
+    $songName.each(function (i) {
+        song.name = $songName.eq(i).val();
+        song.url = $songURL.eq(i).val();
         songs.push(song);
         song = {};
     });
@@ -49,7 +49,7 @@ function editSongsModal(data) {
     let j = 0;
     addSongsFrom.html("");
     songs.forEach(function () {
-        addSongsFrom.append(addSongTemp(songs[j].name, songs[j].url , j));
+        addSongsFrom.append(addSongTemp(songs[j].name, songs[j].url, j));
         j++
     });
     checkAllSongNameInputs();
@@ -57,23 +57,37 @@ function editSongsModal(data) {
 }
 
 $("#search").keyup(function () {
+    let query = this.value.toLowerCase().trim();
+    const $id = $('[id^="check"]');
     if (this.value.length === 0) {
-        getAll();
+        $id.each(function (i, elem) {
+            showSearchResults(elem)
+        });
     } else if (this.value.length === 1) {
 
     }
     else {
-        let query = this.value.toLowerCase().trim();
-
-        $('[id^="check"]').each(function (i, elem) {
+        $id.each(function (i, elem) {
             if (elem.value.toLowerCase().indexOf(query) !== -1) {
-                elem.parentElement.style.display = 'flex';
+                showSearchResults(elem)
             } else {
-                elem.parentElement.style.display = 'none';
+                hideSearchUnmatch(elem);
             }
         });
     }
 });
+
+function showSearchResults(elem) {
+        elem.parentElement.style.display = 'flex';
+        elem.parentElement.classList.remove('roll-out-right');
+}
+
+function hideSearchUnmatch(elem) {
+    elem.parentElement.classList.add('roll-out-right');
+    setTimeout(function () {
+        elem.parentElement.style.display = 'none';
+    }, 400);
+}
 
 function curveText(i) {
     new CircleType($('.curveMe')[i])
@@ -86,10 +100,10 @@ function updateStepOne(id, i) {
     getSongs(id);
 }
 
-function showUpdatedPlaylist(name , img ,i) {
-        updateMediaPlayer(img);
-        updatePlaylistName(name, i);
-        updatePlaylistImg(img , i);
+function showUpdatedPlaylist(name, img, i) {
+    updatePlaylistName(name, i);
+    updatePlaylistImg(img, i);
+    checkIfplaylistIsOnMediaplayer(img , i);
 }
 
 function updatePlaylistName(name, i) {
@@ -97,14 +111,32 @@ function updatePlaylistName(name, i) {
     $curveMe[i].innerHTML = name;
     curveText(i);
     $curveMe[i].classList.add('text-focus-in');
-    setTimeout(function(){ $curveMe[i].classList.remove('text-focus-in'); }, 1000);
+    setTimeout(function () {
+        $curveMe[i].classList.remove('text-focus-in');
+    }, 1000);
 }
 
 function updatePlaylistImg(img, i) {
     let $playListImage = $('.playListImage');
     $playListImage[i].src = img;
-    $playListImage[i].classList.add('shake-vertical');
-    setTimeout(function(){ $playListImage[i].classList.remove('shake-vertical'); }, 1000);
+    $playListImage[i].classList.add('shake-bottom');
+    setTimeout(function () {
+        $playListImage[i].classList.remove('shake-bottom');
+    }, 1000);
+}
+
+function updateMediaPlayer(img) {
+    if ($('.bounce-in-bck').length > 0) {
+        $('#playingDisc').attr('src', img);
+    }
+}
+
+function checkIfplaylistIsOnMediaplayer(img , i) {
+    const $btn = $('.btn-mediaplayer-edit');
+    if ($btn.length > 0 && Number($btn[0].value) === Number(i)) {
+        createMyMediaList(getValOfNewSongsToUpload());
+        updateMediaPlayer(img);
+    }
 }
 
 function movePlaylistsContainer() {

@@ -115,12 +115,12 @@ function validationBadFeedback(id) {
     id.removeClass('is-valid');
     id.addClass('is-invalid');
     id.focus();
-    id.addClass('shake-vertical');
+    id.addClass('shake-bottom');
 }
 
 function validationResetFeedback(id) {
     id.removeClass('is-valid');
     id.removeClass('is-invalid');
-    id.removeClass('shake-vertical');
+    id.removeClass('shake-bottom');
 }
 

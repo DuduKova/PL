@@ -100,12 +100,6 @@ function openUpdateModal(data) {
     imgPriview.attr('src', data.image);
 }
 
-function updateMediaPlayer(img) {
-    if ($('.bounce-in-bck').length > 0) {
-        $('#playingDisc').attr('src', img);
-    }
-}
-
 // ============ delete modal
 
 function confirmDelete(id,uniqeId) {

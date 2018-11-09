@@ -3,6 +3,9 @@
 $basic-opacity: 0.85;
 $full-opacity: 1;
 $zero-opacity: 0;
+$primary-color: #0B7FDD;
+$secondary-color: black;
+$tertiary-color: white;
 $myBG: linear-gradient(90deg, rgba(40, 140, 240, 0.82), rgba(0, 220, 240, 0.53));
 
 body {
@@ -11,11 +14,11 @@ body {
     min-height: 300px;
   }
   .navbar {
-    background: $black;
-    color: $blue;
+    background: $secondary-color;
+    color: $primary-color;
     .btn {
-      color: $primary;
-      background: $white;
+      color: $primary-color;
+      background: $tertiary-color;
       font-size: large;
     }
   }
@@ -32,21 +35,21 @@ body {
   }
 
   .margin-top {
-    margin-top: 100px;
+    margin-top: 60px;
   }
 
   .moveDown {
-    margin-top: 450px;
+    margin-top: 400px;
   }
 
   .mediaPlayer {
     min-width: 600px;
     padding: 10px 40px;
-    background: $black;
+    background: $secondary-color;
     width: 600px;
     border-radius: 125px;
     height: 300px;
-    color: $primary;
+    color: $primary-color;
   }
 
   #myList {
@@ -74,7 +77,7 @@ body {
 
   .current-song {
     font-size: large;
-    color: $primary;
+    color: $primary-color;
     opacity: $full-opacity;
     list-style: none;
     .hide-play {
@@ -132,7 +135,7 @@ body {
   .center-dot {
     height: 25px;
     width: 25px;
-    background-color: white;
+    background-color: $tertiary-color;
   }
 }
 
@@ -170,12 +173,12 @@ img {
 }
 
 .modal-content {
-  color: $white;
-  background: $black;
-  border: 2px solid $white;
+  color: $tertiary-color;
+  background: $secondary-color;
+  border: 2px solid $tertiary-color;
 }
 .modal-header {
-  border-color: $white;
+  border-color: $tertiary-color;
 }
 
 #addSongsForm {
@@ -188,20 +191,20 @@ img {
 }
 
 ::-webkit-scrollbar-track {
-  background: $black;
+  background: $secondary-color;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $white;
+  background: $tertiary-color;
 }
 
 ::-webkit-scrollbar-corner {
-  background: $black;
+  background: $secondary-color;
 }
 
 .input-group-text {
   background:  transparent;
-  color: $white;
+  color: $tertiary-color;
 }
 
  //=========================   My keyframes
@@ -230,44 +233,6 @@ img {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
-  }
-}
-
-.puff-in-center {
-  -webkit-animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-  animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-}
-
-@-webkit-keyframes puff-in-center {
-  0% {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    -webkit-filter: blur(2px);
-    filter: blur(2px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
-    opacity: 1;
-  }
-}
-@keyframes puff-in-center {
-  0% {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    -webkit-filter: blur(2px);
-    filter: blur(2px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
-    opacity: 1;
   }
 }
 
@@ -411,68 +376,78 @@ img {
 }
 
 
-.shake-vertical {
-  -webkit-animation: shake-vertical 0.1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-  animation: shake-vertical 0.1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-  z-index: 1;
+.shake-bottom {
+  -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
-@-webkit-keyframes shake-vertical {
+@-webkit-keyframes shake-bottom {
   0%,
   100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
   }
-  10%,
-  30%,
-  50%,
-  70% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px);
+  10% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
   }
   20%,
   40%,
   60% {
-    -webkit-transform: translateY(8px);
-    transform: translateY(8px);
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
   }
-  80% {
-    -webkit-transform: translateY(6.4px);
-    transform: translateY(6.4px);
-  }
-  90% {
-    -webkit-transform: translateY(-6.4px);
-    transform: translateY(-6.4px);
-  }
-}
-@keyframes shake-vertical {
-  0%,
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  10%,
   30%,
   50%,
   70% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px);
+    -webkit-transform: rotate(4deg);
+    transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+}
+@keyframes shake-bottom {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
   }
   20%,
   40%,
   60% {
-    -webkit-transform: translateY(8px);
-    transform: translateY(8px);
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(4deg);
   }
   80% {
-    -webkit-transform: translateY(6.4px);
-    transform: translateY(6.4px);
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg);
   }
   90% {
-    -webkit-transform: translateY(-6.4px);
-    transform: translateY(-6.4px);
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
   }
 }
+
 
 .scale-out-center {
   -webkit-animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
@@ -505,8 +480,8 @@ img {
 }
 
 .scale-in-center {
-  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: scale-in-center 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @-webkit-keyframes scale-in-center {

@@ -1,29 +1,31 @@
 function audioPlayer() {
     let currentSong = 0;
     const audioPlayer = $("#audioPlayer")[0];
-    const playlistItem = $("#myList li");
+    const songElement = $("#myList li");
+    const songElementUrl = $("#myList a");
     const playIcon = $('#myList i.fa-play');
     playIcon.click(function () {
         audioPlayer.src = $(this).attr('href');
         audioPlayer.play();
-        playlistItem.removeClass("current-song");
-        $('#playingSongPause').remove();
+        songElement.removeClass("current-song");
         currentSong = $(this).parent().index();
         $(this).parent().addClass("current-song");
+        $('#playingSongPause').remove();
+        console.log(currentSong + 'this from click icon');
     });
 
     audioPlayer.addEventListener("ended", function () {
         currentSong++;
-        if (currentSong === playlistItem.length) {
+        if (currentSong === songElement.length) {
             currentSong = 0;
         }
-        playlistItem.removeClass("current-song");
-        audioPlayer.src = playlistItem[currentSong].href;
+        songElement.removeClass("current-song");
+        audioPlayer.src = songElementUrl[currentSong].href;
         audioPlayer.play();
     });
 
     audioPlayer.addEventListener("pause", function () {
-        $('#playingSongPause').remove();
+        //$('#playingSongPause').remove();
         $("#myList li:eq(" + currentSong + ")").addClass('current-song-pause');
         $('#btnPlayMusic').removeClass('d-none');
         $('#btnPauseMusic').addClass('d-none');
@@ -31,25 +33,30 @@ function audioPlayer() {
     });
 
     audioPlayer.addEventListener("play", function () {
-        $('#playingSongPause').remove();
-        playlistItem.removeClass('current-song-pause');
+        //$('#playingSongPause').remove();
+        songElement.removeClass('current-song-pause');
         $('#btnPauseMusic').removeClass('d-none');
         $('#btnPlayMusic').addClass('d-none');
         $('#playingDisc').css('animation-play-state', 'running');
+        console.log(currentSong + 'this from click play');
     });
 
     audioPlayer.addEventListener("playing", function () {
+        songElement.removeClass('current-song-pause');
+        songElement.removeClass("current-song");
+        $('#playingSongPause').remove();
         movePlaylistsContainer();
         let playingSongItem = $("#myList li:eq(" + currentSong + ")");
         playingSongItem.addClass("current-song");
         playingSongItem.prepend(`<i id="playingSongPause" class="fa fa-pause fa-xs hide-pause" onclick="pauseMusic()"></i>`);
-        $('#nowPlaying').text(playlistItem[currentSong].textContent);
-        document.title = playlistItem[currentSong].textContent;
+        $('#nowPlaying').text(songElement[currentSong].textContent);
+        document.title = songElement[currentSong].textContent;
+        console.log(currentSong + 'this from playing event');
     });
 }
 
-function playPlaylist(id, img, songs ,PlId , i) {
-    mediaPlayerDiv.html(mediaPlayerTemp(id, img, songs,PlId , i));
+function playPlaylist(id, img, songs, discElementId, i) {
+    mediaPlayerDiv.html(mediaPlayerTemp(id, img, songs, discElementId, i));
     createMyMediaList(songs);
 }
 
@@ -61,7 +68,7 @@ function createMyMediaList(songs) {
         myList.append(listSongItem(songs[j].name, songs[j].url));
         j++
     });
-        audioPlayer();
+    audioPlayer();
 }
 
 function pauseMusic() {
