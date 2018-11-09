@@ -27,13 +27,13 @@ const playlistTemp = function () {
     const discElementId = now.getMilliseconds() + this.id;
     const index = $('.curveMe').length;
 
-    return `<div class="col-lg-3 col-md-4 col-sm-6 playlist roll-in-left" id="${discElementId}">
+    return `<div class="roll-in-left col-lg-3 col-md-4 col-sm-6 playlist" id="${discElementId}">
             <option value="${this.name}" id="check + ${this.name}"></option>
             <div class="curveMe">${this.name}</div>
             <div class="d-flex justify-content-center align-items-center">
                 <div class="position-absolute be-at-the-top">
                     <button class="btn btn-danger btn-sm rounded-circle" onclick="confirmDelete(${this.id},${discElementId})"><i class="fa fa-times-circle"></i></button>
-                    <button class="btn btn-info btn-sm rounded-circle" data-target="#modal-1" data-toggle="modal" value="${index}" id="${this.id}"><i class="fa fa-pencil-alt"></i></button>
+                    <button class="btn btn-info btn-sm rounded-circle" data-target="#modal-1" data-toggle="modal" name="${discElementId}" value="${index}" id="${this.id}"><i class="fa fa-pencil-alt"></i></button>
                 </div>
                 <div class="rounded-circle position-absolute center-dot"></div>
                 <img src=${this.image} class="rounded-circle shadow-lg playListImage">
@@ -109,7 +109,7 @@ const mediaPlayerTemp = function (id, img, songs, discElementId, i) {
         </div>
 
         <div class="row">
-            <button class="btn btn-info btn-sm rounded-circle btn-mediaplayer-edit" data-target="#modal-1" data-toggle="modal" value="${i}" id="${id}" onclick="pauseMusic()"><i class="fa fa-pencil-alt"></i></button>
+            <button class="btn btn-info btn-sm rounded-circle btn-mediaplayer-edit" data-target="#modal-1" data-toggle="modal" name="${discElementId}" value="${i}" id="${id}"><i class="fa fa-pencil-alt"></i></button>
         </div>
     </div>`
 };

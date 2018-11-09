@@ -6813,7 +6813,7 @@ body {
     height: 120px;
     overflow: scroll; }
   body .songNames {
-    opacity: 0.85;
+    opacity: 0.85 !important;
     color: white; }
     body .songNames .hide-play {
       display: none; }
@@ -6821,13 +6821,13 @@ body {
       display: none; }
     body .songNames:hover {
       list-style: none;
-      opacity: 1; }
+      opacity: 1 !important; }
       body .songNames:hover .hide-play {
         display: inline-block; }
   body .current-song {
     font-size: large;
     color: #0B7FDD;
-    opacity: 1;
+    opacity: 1 !important;
     list-style: none; }
     body .current-song .hide-play {
       display: inline-block; }
@@ -6844,13 +6844,13 @@ body {
     text-align: center;
     align-content: center;
     justify-content: center;
-    opacity: 0.85; }
+    opacity: 0.85 !important; }
     body .container #playlists .playlist button {
       opacity: 0; }
     body .container #playlists .playlist:hover {
-      opacity: 1; }
+      opacity: 1 !important; }
       body .container #playlists .playlist:hover button {
-        opacity: 1; }
+        opacity: 1 !important; }
   body .be-at-the-top {
     top: 20%; }
   body .playlist {
@@ -7146,6 +7146,10 @@ img {
 .roll-in-left {
   -webkit-animation: roll-in-left 0.6s ease-out both;
   animation: roll-in-left 0.6s ease-out both; }
+  .roll-in-left:hover {
+    opacity: 1 !important; }
+    .roll-in-left:hover button {
+      opacity: 1 !important; }
 
 @-webkit-keyframes roll-in-left {
   0% {
@@ -7155,7 +7159,7 @@ img {
   100% {
     -webkit-transform: translateX(0) rotate(0deg);
     transform: translateX(0) rotate(0deg);
-    opacity: 1; } }
+    opacity: 0.85 !important; } }
 @keyframes roll-in-left {
   0% {
     -webkit-transform: translateX(-800px) rotate(-540deg);
@@ -7164,7 +7168,7 @@ img {
   100% {
     -webkit-transform: translateX(0) rotate(0deg);
     transform: translateX(0) rotate(0deg);
-    opacity: 1; } }
+    opacity: 0.85 !important; } }
 .roll-out-right {
   -webkit-animation: roll-out-right 0.6s ease-in both;
   animation: roll-out-right 0.6s ease-in both; }

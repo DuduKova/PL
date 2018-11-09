@@ -11,7 +11,6 @@ function audioPlayer() {
         currentSong = $(this).parent().index();
         $(this).parent().addClass("current-song");
         $('#playingSongPause').remove();
-        console.log(currentSong + 'this from click icon');
     });
 
     audioPlayer.addEventListener("ended", function () {
@@ -25,7 +24,6 @@ function audioPlayer() {
     });
 
     audioPlayer.addEventListener("pause", function () {
-        //$('#playingSongPause').remove();
         $("#myList li:eq(" + currentSong + ")").addClass('current-song-pause');
         $('#btnPlayMusic').removeClass('d-none');
         $('#btnPauseMusic').addClass('d-none');
@@ -33,12 +31,10 @@ function audioPlayer() {
     });
 
     audioPlayer.addEventListener("play", function () {
-        //$('#playingSongPause').remove();
         songElement.removeClass('current-song-pause');
         $('#btnPauseMusic').removeClass('d-none');
         $('#btnPlayMusic').addClass('d-none');
         $('#playingDisc').css('animation-play-state', 'running');
-        console.log(currentSong + 'this from click play');
     });
 
     audioPlayer.addEventListener("playing", function () {
@@ -51,7 +47,6 @@ function audioPlayer() {
         playingSongItem.prepend(`<i id="playingSongPause" class="fa fa-pause fa-xs hide-pause" onclick="pauseMusic()"></i>`);
         $('#nowPlaying').text(songElement[currentSong].textContent);
         document.title = songElement[currentSong].textContent;
-        console.log(currentSong + 'this from playing event');
     });
 }
 

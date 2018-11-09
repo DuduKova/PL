@@ -61,11 +61,11 @@ function updatePlaylist(id) {
     )
 }
 
-function updateSongs(id, i) {
+function updateSongs(id, i, discElementId) {
     $.post(`/api/playlist.php?type=songs&id=${id}`, {
         songs: getValOfNewSongsToUpload(),
         success: function () {
-            showUpdatedPlaylist(playlistName.val(), playlistImg.val(), i);
+            showUpdatedPlaylist(id ,playlistName.val(), playlistImg.val(),getValOfNewSongsToUpload(), discElementId , i);
         }
     });
 }

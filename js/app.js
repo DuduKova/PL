@@ -100,10 +100,10 @@ function updateStepOne(id, i) {
     getSongs(id);
 }
 
-function showUpdatedPlaylist(name, img, i) {
+function showUpdatedPlaylist(id, name ,img, songs, discElementId, i) {
     updatePlaylistName(name, i);
     updatePlaylistImg(img, i);
-    checkIfplaylistIsOnMediaplayer(img , i);
+    checkIfplaylistIsOnMediaplayer(id, img, songs,discElementId , i);
 }
 
 function updatePlaylistName(name, i) {
@@ -125,17 +125,10 @@ function updatePlaylistImg(img, i) {
     }, 1000);
 }
 
-function updateMediaPlayer(img) {
-    if ($('.bounce-in-bck').length > 0) {
-        $('#playingDisc').attr('src', img);
-    }
-}
-
-function checkIfplaylistIsOnMediaplayer(img , i) {
+function checkIfplaylistIsOnMediaplayer(id, img, songs,discElementId , i) {
     const $btn = $('.btn-mediaplayer-edit');
     if ($btn.length > 0 && Number($btn[0].value) === Number(i)) {
-        createMyMediaList(getValOfNewSongsToUpload());
-        updateMediaPlayer(img);
+        playPlaylist(id, img, songs,discElementId , i);
     }
 }
 

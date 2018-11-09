@@ -7,7 +7,7 @@ modal.on('show.bs.modal', function (event) {
         modalHeaderSongs.html('Edit Playlist Songs');
         btnNext.html('Edit & Next');
         btnNext.attr('onclick', `updateStepOne(${event.relatedTarget.id} ,${event.relatedTarget.value})`);
-        btnSave.attr('onclick', `updateSongs(${event.relatedTarget.id} ,${event.relatedTarget.value}); validateSecondStep()`);
+        btnSave.attr('onclick', `updateSongs(${event.relatedTarget.id} ,${event.relatedTarget.value} , ${event.relatedTarget.name}); validateSecondStep()`);
     } else {
         btnNext.attr('disabled', 'disabled');
         btnNext.html('Next');
