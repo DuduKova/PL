@@ -1,6 +1,7 @@
 //variables
 const mediaPlayerDiv = $('#mediaContainer');
 const errorAlert = $('#errorAlert');
+const errorAlertStep2 = $('#errorAlertStep2');
 const playlistContainer = $('#playlists');
 const playlistSection = $('#playlistsSection');
 
@@ -13,7 +14,7 @@ const playlistName = $('#playlistName');
 const playlistImg = $('#playlistImg');
 const imgPriview = $('#imgPreview');
 const addSongsFrom = $('#addSongsForm');
-const btnNext = $('#next'); // continue to next step in creating the playlist-first
+const btnNext = $('#next');
 const btnSave = $('#save');
 const btnConfirmDelete = $('#btnConfirmDelete');
 const deleteModal = $('#confirmDelete');

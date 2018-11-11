@@ -21,8 +21,7 @@ function draw1(data) {
 function deleteElementById(id) {
     $(`#${id}`).addClass('roll-out-right').animate({height: 0}, 1000, "linear", function () {
             $(this).remove();
-            let $mediaPlayer = $('.mediaPlayer');
-            if ($mediaPlayer.length === 0) {
+            if ($('.mediaPlayer').length === 0) {
                 movePlaylistsContainerBack();
             }
         }
@@ -44,17 +43,20 @@ function getValOfNewSongsToUpload() {
     return songs;
 }
 
-function editSongsModal(data) {
-    const songs = data.data.songs;
-    let j = 0;
-    addSongsFrom.html("");
-    songs.forEach(function () {
-        addSongsFrom.append(addSongTemp(songs[j].name, songs[j].url, j));
-        j++
-    });
-    checkAllSongNameInputs();
-    checkAllMp3Inputs();
+function curveText(i) {
+    new CircleType($('.curveMe')[i])
+        .radius(140);
 }
+
+function movePlaylistsContainer() {
+    playlistSection.addClass('moveDown');
+}
+
+function movePlaylistsContainerBack() {
+    playlistSection.removeClass('moveDown');
+}
+
+// ============= search
 
 $("#search").keyup(function () {
     let query = this.value.toLowerCase().trim();
@@ -78,8 +80,8 @@ $("#search").keyup(function () {
 });
 
 function showSearchResults(elem) {
-        elem.parentElement.style.display = 'flex';
-        elem.parentElement.classList.remove('roll-out-right');
+    elem.parentElement.style.display = 'flex';
+    elem.parentElement.classList.remove('roll-out-right');
 }
 
 function hideSearchUnmatch(elem) {
@@ -89,10 +91,7 @@ function hideSearchUnmatch(elem) {
     }, 400);
 }
 
-function curveText(i) {
-    new CircleType($('.curveMe')[i])
-        .radius(140);
-}
+// ============= update related functions
 
 function updateStepOne(id, i) {
     sendEvent('#modal-1', 2);
@@ -132,10 +131,23 @@ function checkIfplaylistIsOnMediaplayer(id, img, songs,discElementId , i) {
     }
 }
 
-function movePlaylistsContainer() {
-    playlistSection.addClass('moveDown');
+function editSongsModal(data) {
+    const songs = data.data.songs;
+    let j = 0;
+    addSongsFrom.html("");
+    songs.forEach(function () {
+        addSongsFrom.append(addSongTemp(songs[j].name, songs[j].url, j));
+        j++
+    });
+    checkAllSongNameInputs();
+    checkAllMp3Inputs();
 }
 
-function movePlaylistsContainerBack() {
-    playlistSection.removeClass('moveDown');
+function openUpdateModal(data) {
+    playlistName.val(data.name);
+    playlistImg.val(data.image);
+    imgPriview.attr('src', data.image);
+    validatePlaylistName();
+    validatePlaylistImg();
+    validateFirstStep();
 }

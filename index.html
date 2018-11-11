@@ -8,28 +8,28 @@
 </head>
 <body>
 <section class="fixed-top">
-<header class="mb-4">
-    <nav class="navbar navbar-expand-md">
-        <div class="col-sm-3">
-            <div class="d-flex justify-content-center align-items-center">
-                <button class="btn btn-primary rounded-circle float-left m-1" data-toggle="modal"
-                        data-target="#modal-1" id="addNewPlaylist">+
-                </button>
-                <span>Add new playlist</span>
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-md">
+            <div class="col-sm-3">
+                <div class="d-flex justify-content-center align-items-center">
+                    <button class="btn btn-primary rounded-circle float-left m-1" data-toggle="modal"
+                            data-target="#modal-1" id="addNewPlaylist">+
+                    </button>
+                    <span>Add new playlist</span>
+                </div>
             </div>
-        </div>
-        <form class="input-group ml-auto col-sm-3">
-            <input type="search" class="form-control" placeholder="Search playlist" id="search" data-list="playlists">
-            <div class="input-group-append">
-                <span class="input-group-text"><i class="fa fa-search"></i></span>
-            </div>
-        </form>
-    </nav>
-</header>
+            <form class="input-group ml-auto col-sm-3">
+                <input type="search" class="form-control" placeholder="Search playlist" id="search">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                </div>
+            </form>
+        </nav>
+    </header>
 
-<section id="mediaContainer" class="container d-flex justify-content-center align-items-center">
+    <section id="mediaContainer" class="container d-flex justify-content-center align-items-center">
 
-</section>
+    </section>
 </section>
 
 <section id="playlistsSection" class="container min-height position-relative margin-top">
@@ -54,28 +54,29 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div>
-                            <label for="playlistName">Playlist Name</label><br>
-                            <input class="input-group form-control" type="text" id="playlistName"
-                                   placeholder="PL example" minlength="1" required onchange="validatePlaylistName(); validateFirstStep()">
-                            <div class="invalid-feedback scale-in-center">
-                                please enter name.
-                            </div>
-                            <div class="valid-feedback scale-in-center">
-                                Looks good!
-                            </div>
+                                <label for="playlistName">Playlist Name</label>
+                                <input class="input-group form-control" type="text" id="playlistName"
+                                       placeholder="PL example" minlength="1" required
+                                       onchange="validatePlaylistName(); validateFirstStep()">
+                                <div class="invalid-feedback scale-in-center">
+                                    please enter name.
+                                </div>
+                                <div class="valid-feedback scale-in-center">
+                                    Looks good!
+                                </div>
                             </div>
                             <div>
-                            <label for="playlistImg">Playlist URL</label>
-                           <br>
-                            <input class="input-group form-control" type="text" id="playlistImg" placeholder="http://"
-                                   minlength="1"
-                                   required onchange="validatePlaylistImg(); validateFirstStep()">
-                            <div class="invalid-feedback scale-in-center">
-                                The url you entered is not type of img.
-                            </div>
-                            <div class="valid-feedback scale-in-center">
-                                Looks good!
-                            </div>
+                                <label class="mt-3" for="playlistImg">Playlist URL</label>
+                                <input class="input-group form-control" type="text" id="playlistImg"
+                                       placeholder="http://"
+                                       minlength="1"
+                                       required onchange="validatePlaylistImg(); validateFirstStep()">
+                                <div class="invalid-feedback scale-in-center">
+                                    The url you entered is not type of img.
+                                </div>
+                                <div class="valid-feedback scale-in-center">
+                                    Looks good!
+                                </div>
                             </div>
                             <div class="row pt-5 mt-5">
                                 <div class="col-sm-6">
@@ -97,6 +98,10 @@
                     </div>
                 </div>
                 <div class="modal-body step step-2">
+                    <div class="alert alert-danger d-none swing-in-top-fwd" role="alert" id="errorAlertStep2">
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.<br>
+                        <small>Requirements: At leaset one song with valid url.mp3 and name.</small>
+                    </div>
                     <div id="addSongsForm">
 
                     </div>

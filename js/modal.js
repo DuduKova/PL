@@ -17,8 +17,8 @@ modal.on('show.bs.modal', function (event) {
         modalHeader.html('Add new playlist');
         modalHeaderSongs.html('Add Playlist Songs');
         addSongsFrom.html(addSongTemp());
-        btnSave.attr('onclick', 'validateSecondStep(); createPlaylist()');
         btnNext.attr('onclick', `sendEvent('#modal-1', 2);`);
+        btnSave.attr('onclick', 'validateSecondStep(); createPlaylist()');
     }
 });
 
@@ -26,6 +26,7 @@ modal.on('hidden.bs.modal', function () {
     validationResetFeedback(playlistName);
     validationResetFeedback(playlistImg);
     errorAlert.addClass('d-none');
+    errorAlertStep2.addClass('d-none');
     modal.find('.step').hide();
     modal.find('[data-step]').hide();
     modal.find('.step-1').show();
@@ -58,11 +59,11 @@ function bindEventsToModal(modal) {
 
 function goToStep(step) {
     reset();
-    let to_show = modal.find('.step-' + step);
-    if (to_show.length === 0) {
+    let toShow = modal.find('.step-' + step);
+    if (toShow.length === 0) {
         return;
     }
-    to_show.show();
+    toShow.show();
 }
 
 function reset() {
@@ -88,16 +89,7 @@ function resetFields() {
 }
 
 function addMoreSong() {
-    //$('#save').attr('disabled', 'disabled');
     addSongsFrom.append(addSongTemp());
-}
-
-// ============= update mode functions ========
-
-function openUpdateModal(data) {
-    playlistName.val(data.name);
-    playlistImg.val(data.image);
-    imgPriview.attr('src', data.image);
 }
 
 // ============ delete modal

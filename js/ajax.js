@@ -28,15 +28,15 @@ function createPlaylistRequest(name, img, songs) {
     })
 }
 
-function getOneForUpdate(id) {
-    $.get(`/api/playlist.php?type=playlist&id=${id}`, function (data) {
-        openUpdateModal(data.data);
-    });
-}
-
 function getOne(id) {
     $.get(`/api/playlist.php?type=playlist&id=${id}`, function (data) {
         draw1(data.data)
+    });
+}
+
+function getOneForUpdate(id) {
+    $.get(`/api/playlist.php?type=playlist&id=${id}`, function (data) {
+        openUpdateModal(data.data);
     });
 }
 
@@ -92,4 +92,4 @@ function getHeaderContent(url) {
         }
     });
 }
-*/
+ */
