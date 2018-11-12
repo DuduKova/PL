@@ -3,89 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d59ad914-a71e-4212-adb3-05a0286033a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_align.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_background.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_borders.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_clearfix.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_display.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_embed.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_flex.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_float.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_position.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_screenreaders.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_shadows.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_sizing.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_spacing.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_text.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/08141cfbd33d91d640728ea9dbe550b9dfcb99fc/_visibility.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_alert.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_badge.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_breadcrumb.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_button-group.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_buttons.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_card.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_carousel.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_close.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_code.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_custom-forms.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_dropdown.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_forms.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_functions.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_grid.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_images.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_input-group.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_jumbotron.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_list-group.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_media.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_mixins.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_modal.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_nav.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_navbar.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_pagination.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_popover.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_print.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_progress.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_reboot.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_root.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_tables.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_tooltip.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_transitions.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_type.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_utilities.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/_variables.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/30206ec92232e7850136952d2330b4dca40d1b0e/bootstrap.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_alert.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_background-variant.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_badge.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_border-radius.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_box-shadow.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_breakpoints.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_buttons.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_caret.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_clearfix.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_float.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_forms.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_gradients.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_grid-framework.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_grid.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_hover.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_image.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_list-group.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_lists.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_nav-divider.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_pagination.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_reset-text.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_resize.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_screen-reader.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_size.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_table-row.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_text-emphasis.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_text-hide.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_text-truncate.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_transition.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/7b83a2593bdf22f00438c2cd0f5457d70bad161d/_visibility.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/d2fde810e726f8438017d36938498329679a5057/style.scssc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mp3/Ed Sheeran - Shape of You [Official Video].mp3" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +54,7 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="12" />
-          <entry key="project.open.time.0" value="3" />
+          <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.26" value="1" />
@@ -143,7 +62,7 @@
           <entry key="project.open.time.7" value="4" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -153,8 +72,8 @@
           <entry key="htm" value="1" />
           <entry key="html" value="3" />
           <entry key="ini" value="2" />
-          <entry key="js" value="36" />
-          <entry key="json" value="9" />
+          <entry key="js" value="37" />
+          <entry key="json" value="10" />
           <entry key="md" value="1" />
           <entry key="php" value="5" />
           <entry key="playlists" value="2" />
@@ -169,8 +88,8 @@
           <entry key="Database Element" value="2" />
           <entry key="HTML" value="4" />
           <entry key="Ini" value="2" />
-          <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="36" />
+          <entry key="JSON" value="10" />
+          <entry key="JavaScript" value="37" />
           <entry key="Markdown" value="1" />
           <entry key="PHP" value="5" />
           <entry key="SCSS" value="4" />
@@ -184,7 +103,7 @@
         <counts>
           <entry key="htaccess" value="15" />
           <entry key="html" value="3268" />
-          <entry key="js" value="17744" />
+          <entry key="js" value="17803" />
           <entry key="json" value="7" />
           <entry key="php" value="126" />
           <entry key="scss" value="2346" />
@@ -195,7 +114,7 @@
         <counts>
           <entry key="HTML" value="3289" />
           <entry key="JSON" value="7" />
-          <entry key="JavaScript" value="17723" />
+          <entry key="JavaScript" value="17782" />
           <entry key="PHP" value="126" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="SCSS" value="2346" />
@@ -235,56 +154,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/templates.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/ajax.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/.htaccess">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+            <state relative-caret-position="180">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -339,9 +213,6 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/node_modules/@fortawesome/fontawesome-free/package.json" />
@@ -359,13 +230,15 @@
   <component name="PhpWebServerValidation" path_to_validation_script="$PROJECT_DIR$" selected_validation_type="LOCAL" web_path_to_validation_script="localhost:8005" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1.16" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="173" />
-    <option name="width" value="1440" />
-    <option name="height" value="877" />
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <showMembers ProjectPane="false" />
+      <autoscrollToSource ProjectPane="false" />
       <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
@@ -377,22 +250,6 @@
             <path>
               <item name="playlist" type="b2602c69:ProjectViewProjectNode" />
               <item name="playlist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="playlist" type="b2602c69:ProjectViewProjectNode" />
-              <item name="playlist" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="playlist" type="b2602c69:ProjectViewProjectNode" />
-              <item name="playlist" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="playlist" type="b2602c69:ProjectViewProjectNode" />
-              <item name="playlist" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="style.scss" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="playlist" type="b2602c69:ProjectViewProjectNode" />
@@ -420,14 +277,14 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/js" />
-      <recent name="$PROJECT_DIR$/mp3" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/js" />
       <recent name="$PROJECT_DIR$/img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/mp3" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -514,16 +371,18 @@
       <workItem from="1540827560982" duration="30985000" />
       <workItem from="1541318770125" duration="128269000" />
       <workItem from="1542042999366" duration="888000" />
+      <workItem from="1542044092967" duration="2109000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="427575000" />
+    <option name="totallyTimeSpent" value="429684000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13431014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13553114" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -585,21 +444,9 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../playlist-first/api/playlist.php" />
     <entry file="file://$PROJECT_DIR$/../playlist-first/js/main.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@fortawesome/fontawesome-free/js/all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19906" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@fortawesome/fontawesome-free/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@fortawesome/fontawesome-free/js/all.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.svg" />
+    <entry file="file://$PROJECT_DIR$/node_modules/@fortawesome/fontawesome-free/package.json" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/56e1351b-5ba3-4597-b801-eba572daa4bd/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -614,27 +461,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/mediaPlayer.js" />
-    <entry file="file://$PROJECT_DIR$/js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.js" />
     <entry file="http://localhost:63342/playlist/js/app.js">
       <provider selected="true" editor-type-id="httpFileEditor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/js/justtosave.js" />
     <entry file="file://$PROJECT_DIR$/js/multi-step-modal.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_modal.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_alert.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_alert.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_modal.scss" />
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_alert.scss" />
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_alert.scss" />
     <entry file="file://$PROJECT_DIR$/js/playlistModel.js" />
     <entry file="file://$USER_HOME$/Downloads/Arctext-master/js/jquery.arctext.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -643,13 +478,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="1020" column="18" selection-start-line="1020" selection-start-column="18" selection-end-line="1020" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css" />
     <entry file="file://$USER_HOME$/Downloads/Arctext-master/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -662,70 +491,24 @@
     <entry file="file://$PROJECT_DIR$/node_modules/circletype/README.md" />
     <entry file="file://$PROJECT_DIR$/img/My Awesome Player.htm" />
     <entry file="file://$PROJECT_DIR$/img/My Awesome Player_files/ajax.js" />
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/playlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2460">
-          <caret line="164" column="1" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Docs/playlistDB.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/api/playlist.php" />
+    <entry file="file://$PROJECT_DIR$/Docs/playlistDB.sql" />
     <entry file="file://$PROJECT_DIR$/js/c-text.js" />
     <entry file="file://$PROJECT_DIR$/js/media-player.js" />
     <entry file="file://$PROJECT_DIR$/js/modal.js" />
     <entry file="file://$PROJECT_DIR$/js/validation.js" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/templates.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js" />
+    <entry file="file://$PROJECT_DIR$/js/templates.js" />
+    <entry file="file://$PROJECT_DIR$/api/.htaccess" />
+    <entry file="file://$PROJECT_DIR$/css/style.scss" />
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ajax.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+        <state relative-caret-position="180">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
         </state>
       </provider>
     </entry>

@@ -10,6 +10,8 @@ function setDataInLocalHost(data) {
     localStorage.setItem('playlists', JSON.stringify(window.playlists));
 }
 
+// GET /playlist
+
 function getAll() {
     playlistContainer.html('');
     $.get('/api/playlist.php?type=playlist', function (data) {
@@ -17,6 +19,8 @@ function getAll() {
         drawPlaylists(data.data);
     });
 }
+
+//POST /playlist
 
 function createPlaylistRequest(name, img, songs) {
     $.post('/api/playlist.php?type=playlist', {
@@ -27,6 +31,8 @@ function createPlaylistRequest(name, img, songs) {
         getOne(response.data.id);
     })
 }
+
+//GET /playlist/{id}
 
 function getOne(id) {
     $.get(`/api/playlist.php?type=playlist&id=${id}`, function (data) {
@@ -40,6 +46,8 @@ function getOneForUpdate(id) {
     });
 }
 
+//GET /playlist/{id}/songs
+
 function getSongs(id) {
     $.get(`/api/playlist.php?type=songs&id=${id}`, function (data) {
         editSongsModal(data);
@@ -52,6 +60,8 @@ function getSongsToMedia(id, img, discElementId) {
     });
 }
 
+//POST /playlist/{id}
+
 function updatePlaylist(id , name , img) {
     $.post(`/api/playlist.php?type=playlist&id=${id}`,
         {
@@ -60,6 +70,8 @@ function updatePlaylist(id , name , img) {
         }
     )
 }
+
+//POST /playlist/{id}/songs
 
 function updateSongs(id, discElementId) {
     if (validateSecondStep()) {
@@ -72,6 +84,8 @@ function updateSongs(id, discElementId) {
     }
 }
 
+//DELETE /playlist/{id}
+
 function deletePlaylist(id, elementId) {
     $.ajax({
         method: 'DELETE',
@@ -82,18 +96,3 @@ function deletePlaylist(id, elementId) {
         }
     });
 }
-
-/*
-
-function checkImg(img) {
-    $.ajax({
-        type: "get",
-        url: img,
-        success: function(response, status, xhr){
-            if (xhr.status === 200) {
-               return true;
-            }
-        }
-    });
-}
-*/
