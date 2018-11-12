@@ -50,22 +50,6 @@ function audioPlayer() {
     });
 }
 
-function playPlaylist(id, img, songs, discElementId, i) {
-    mediaPlayerDiv.html(mediaPlayerTemp(id, img, songs, discElementId, i));
-    createMyMediaList(songs);
-}
-
-function createMyMediaList(songs) {
-    const myList = $('#myList');
-    myList.html('');
-    let j = 0;
-    songs.forEach(function () {
-        myList.append(listSongItem(songs[j].name, songs[j].url));
-        j++
-    });
-    audioPlayer();
-}
-
 function pauseMusic() {
     $('#audioPlayer')[0].pause();
 }

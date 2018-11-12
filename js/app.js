@@ -1,3 +1,21 @@
+// ========== darw & delete func
+
+function playPlaylist(id, img, songs, discElementId) {
+    mediaPlayerDiv.html(mediaPlayerTemp(id, img, songs, discElementId));
+    createMyMediaList(songs);
+}
+
+function createMyMediaList(songs) {
+    const myList = $('#myList');
+    myList.html('');
+    let j = 0;
+    songs.forEach(function () {
+        myList.append(listSongItem(songs[j].name, songs[j].url));
+        j++
+    });
+    audioPlayer();
+}
+
 function drawPlaylists(data) {
     for (let i = 0; i < data.length; i++) {
         playlistContainer.append(playlistTemp.apply({
@@ -20,7 +38,7 @@ function draw1(data) {
 
 function deleteElementById(id) {
     $(`#${id}`).addClass('roll-out-right').animate({height: 0}, 1000, "linear", function () {
-            $(this).remove();
+            $(`#${id}`).remove();
             if ($('.mediaPlayer').length === 0) {
                 movePlaylistsContainerBack();
             }
@@ -28,23 +46,13 @@ function deleteElementById(id) {
     );
 }
 
-function getValOfNewSongsToUpload() {
-    const songs = [];
-    let song = {};
-    const $songName = $('.songName');
-    const $songURL = $('.songUrl');
-
-    $songName.each(function (i) {
-        song.name = $songName.eq(i).val();
-        song.url = $songURL.eq(i).val();
-        songs.push(song);
-        song = {};
-    });
-    return songs;
-}
-
 function curveText(i) {
     new CircleType($('.curveMe')[i])
+        .radius(140);
+}
+
+function curveTextElement(ele) {
+    new CircleType(ele)
         .radius(140);
 }
 
@@ -93,41 +101,64 @@ function hideSearchUnmatch(elem) {
 
 // ============= update related functions
 
-function updateStepOne(id, i) {
-    sendEvent('#modal-1', 2);
-    updatePlaylist(id, i);
-    getSongs(id);
+function getValOfNewSongsToUpload() {
+    const songs = [];
+    let song = {};
+    const $songName = $('.songName');
+    const $songURL = $('.songUrl');
+
+    $songName.each(function (i) {
+        song.name = $songName.eq(i).val();
+        song.url = $songURL.eq(i).val();
+        songs.push(song);
+        song = {};
+    });
+    return songs;
 }
 
-function showUpdatedPlaylist(id, name ,img, songs, discElementId, i) {
-    updatePlaylistName(name, i);
-    updatePlaylistImg(img, i);
-    checkIfplaylistIsOnMediaplayer(id, img, songs,discElementId , i);
+function updateStepOne(id, discElementId) {
+    if(validateFirstStep()) {
+        const name = playlistName.val();
+        const img = playlistImg.val();
+        sendEvent('#modal-1', 2);
+        updatePlaylist(id , name , img);
+        getSongs(id);
+        updatePlaylistName(name, discElementId);
+        updatePlaylistImg(img, discElementId);
+        updateMediaPlayerFirstStep(img , discElementId);
+    }
 }
 
-function updatePlaylistName(name, i) {
-    const $curveMe = $('.curveMe');
-    $curveMe[i].innerHTML = name;
-    curveText(i);
-    $curveMe[i].classList.add('text-focus-in');
-    setTimeout(function () {
-        $curveMe[i].classList.remove('text-focus-in');
-    }, 1000);
-}
-
-function updatePlaylistImg(img, i) {
-    let $playListImage = $('.playListImage');
-    $playListImage[i].src = img;
-    $playListImage[i].classList.add('shake-bottom');
-    setTimeout(function () {
-        $playListImage[i].classList.remove('shake-bottom');
-    }, 1000);
-}
-
-function checkIfplaylistIsOnMediaplayer(id, img, songs,discElementId , i) {
+function updateMediaPlayerFirstStep(img , discElementId) {
     const $btn = $('.btn-mediaplayer-edit');
-    if ($btn.length > 0 && Number($btn[0].value) === Number(i)) {
-        playPlaylist(id, img, songs,discElementId , i);
+    if ($btn.length > 0 && Number($btn[0].name) === Number(discElementId)) {
+        $('#playingDisc').attr('src' , img);
+    }
+}
+
+function updatePlaylistName(name, discElementId) {
+    const $curveMe = $(`.${discElementId}`)[0];
+    $curveMe.innerHTML = name;
+    curveTextElement($curveMe);
+    $curveMe.classList.add('text-focus-in');
+    setTimeout(function () {
+        $curveMe.classList.remove('text-focus-in');
+    }, 1000);
+}
+
+function updatePlaylistImg(img, discElementId) {
+    let $playListImage = $(`img[name^=${discElementId}]`)[0];
+    $playListImage.src = img;
+    $playListImage.classList.add('shake-bottom');
+    setTimeout(function () {
+        $playListImage.classList.remove('shake-bottom');
+    }, 1000);
+}
+
+function checkIfplaylistIsOnMediaplayer(id, img, songs,discElementId) {
+    const $btn = $('.btn-mediaplayer-edit');
+    if ($btn.length > 0 && Number($btn[0].name) === Number(discElementId)) {
+        playPlaylist(id, img, songs,discElementId);
     }
 }
 

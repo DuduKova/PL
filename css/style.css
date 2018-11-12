@@ -6781,7 +6781,8 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 body {
-  background: linear-gradient(90deg, rgba(40, 140, 240, 0.82), rgba(0, 220, 240, 0.53)); }
+  background: linear-gradient(90deg, rgba(40, 140, 240, 0.82), rgba(0, 220, 240, 0.53));
+  overflow-x: hidden; }
   body .min-height {
     min-height: 300px; }
   body .navbar {
@@ -6846,7 +6847,7 @@ body {
     justify-content: center;
     opacity: 0.85 !important; }
     body .container #playlists .playlist button {
-      opacity: 0; }
+      opacity: 0 !important; }
     body .container #playlists .playlist:hover {
       opacity: 1 !important; }
       body .container #playlists .playlist:hover button {
@@ -6861,6 +6862,10 @@ body {
     width: 25px;
     background-color: white; }
 
+.input-group-text {
+  background: transparent;
+  color: white; }
+
 .red-trash {
   color: indianred; }
 
@@ -6870,14 +6875,6 @@ body {
 img {
   width: 200px;
   height: 200px; }
-
-.playlistName span {
-  height: 200px;
-  position: absolute;
-  width: 20px;
-  left: 0;
-  top: 0;
-  transform-origin: bottom center; }
 
 .curveMe {
   word-spacing: 5px;
@@ -6908,10 +6905,6 @@ img {
 
 ::-webkit-scrollbar-corner {
   background: black; }
-
-.input-group-text {
-  background: transparent;
-  color: white; }
 
 .rotate-center {
   -webkit-animation: rotate-center 33s linear infinite both;

@@ -1,13 +1,11 @@
 modal.on('show.bs.modal', function (event) {
     if ($(event.relatedTarget).hasClass('btn-info')) {
         getOneForUpdate(event.relatedTarget.id);
-        btnNext.removeAttr('disabled');
-        btnSave.removeAttr('disabled');
         modalHeader.html('Edit Playlist');
         modalHeaderSongs.html('Edit Playlist Songs');
         btnNext.html('Edit & Next');
-        btnNext.attr('onclick', `updateStepOne(${event.relatedTarget.id} ,${event.relatedTarget.value})`);
-        btnSave.attr('onclick', `updateSongs(${event.relatedTarget.id} ,${event.relatedTarget.value} , ${event.relatedTarget.name}); validateSecondStep()`);
+        btnNext.attr('onclick', `updateStepOne(${event.relatedTarget.id} ,${event.relatedTarget.name})`);
+        btnSave.attr('onclick', `updateSongs(${event.relatedTarget.id} , ${event.relatedTarget.name})`);
     } else {
         btnNext.attr('disabled', 'disabled');
         btnNext.html('Next');
@@ -18,7 +16,7 @@ modal.on('show.bs.modal', function (event) {
         modalHeaderSongs.html('Add Playlist Songs');
         addSongsFrom.html(addSongTemp());
         btnNext.attr('onclick', `sendEvent('#modal-1', 2);`);
-        btnSave.attr('onclick', 'validateSecondStep(); createPlaylist()');
+        btnSave.attr('onclick', 'createPlaylist()');
     }
 });
 

@@ -10,6 +10,7 @@ $myBG: linear-gradient(90deg, rgba(40, 140, 240, 0.82), rgba(0, 220, 240, 0.53))
 
 body {
   background: $myBG;
+  overflow-x: hidden;
   .min-height {
     min-height: 300px;
   }
@@ -139,6 +140,11 @@ body {
   }
 }
 
+.input-group-text {
+  background:  transparent;
+  color: $tertiary-color;
+}
+
 .red-trash {
   color: indianred;
 }
@@ -152,17 +158,6 @@ body {
 img {
   width: 200px;
   height: 200px;
-}
-
-.playlistName {
-  span {
-    height: 200px;
-    position: absolute;
-    width: 20px;
-    left: 0;
-    top: 0;
-    transform-origin: bottom center;
-  }
 }
 
 .curveMe {
@@ -202,12 +197,7 @@ img {
   background: $secondary-color;
 }
 
-.input-group-text {
-  background:  transparent;
-  color: $tertiary-color;
-}
-
- //=========================   My keyframes
+ //=========================   My keyframes   ==========================
 
 
 .rotate-center {

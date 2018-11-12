@@ -3,6 +3,9 @@
 function validateFirstStep() {
     if (playlistName.hasClass('is-valid') && playlistImg.hasClass('is-valid')) {
         btnNext.removeAttr('disabled');
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -84,6 +87,7 @@ function checkAllSongNameInputs() {
 function validateSecondStep() {
     if (checkAllSongNameInputs() === true && checkAllMp3Inputs() === true && validateMinimumOneSong(getValOfNewSongsToUpload()) === true) {
         modal.modal('hide');
+        return true;
     } else {
         errorAlertStep2.removeClass('d-none');
         return false;
@@ -101,10 +105,8 @@ function validateMinimumOneSong(songs) {
 }
 
 function createPlaylist() {
-    if (validateMinimumOneSong(getValOfNewSongsToUpload())) {
+    if (validateSecondStep()) {
      createPlaylistRequest(playlistName.val(), playlistImg.val(), getValOfNewSongsToUpload());
-    } else {
-        return false;
     }
 }
 
